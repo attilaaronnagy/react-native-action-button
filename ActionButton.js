@@ -324,7 +324,10 @@ ActionButton.propTypes = {
   outRangeScale: PropTypes.number,
   btnOutRange: PropTypes.string,
   btnOutRangeTxt: PropTypes.string,
-  children: PropTypes.element,
+  children: PropTypes.oneOfType([
+    PropTypes.element,
+    PropTypes.array
+  ]),,
 
 
   size: PropTypes.number,
