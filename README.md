@@ -1,4 +1,6 @@
 # react-native-action-button
+Fork of this awesome (https://github.com/mastermoo/react-native-action-button) component. Child component wrap issue kind of solved & little code cleanup.
+
 customizable multi-action-button component for react-native
 
 ![react-native-action-button demo](http://i.giphy.com/26BkMir9IcAhqe4EM.gif)
