@@ -8,21 +8,21 @@ customizable multi-action-button component for react-native
 
 ### Installation
 ```bash
-npm i react-native-action-button --save
+npm i git+https://git@github.com/attilaaronnagy/react-native-action-button.git --save
 ```
 
 ### Usage
 
 First, require it from your app's JavaScript files with:
 ```bash
-import ActionButton from 'react-native-action-button';
+import { ActionButton, ActionButtonItem } from 'react-native-action-button';
 ```
 
 ##### ActionButton
 `ActionButton` component is the main component which wraps everything and provides a couple of props (see Config below).
 
-##### ActionButton.Item
-`ActionButton.Item` specifies an Action Button. You have to include at least 1 `ActionButton.Item`.
+##### ActionButtonItem
+`ActionButtonItem` specifies an Action Button. You have to include at least 1 `ActionButtonItem`.
 
 
 ### Example
@@ -31,8 +31,8 @@ _The following Basic example can be found in `example/Basic`._
 ```js
 import React, { Component } from 'react';
 import { StyleSheet, View } from 'react-native';
-import ActionButton from 'react-native-action-button';
 import Icon from 'react-native-vector-icons/Ionicons';
+import { ActionButton, ActionButtonItem } from 'react-native-action-button';
 
 
 class App extends Component {
@@ -42,15 +42,15 @@ class App extends Component {
       <View style={{flex:1, backgroundColor: '#f3f3f3'}}>
         {/*Rest of App come ABOVE the action button component!*/}
         <ActionButton buttonColor="rgba(231,76,60,1)">
-          <ActionButton.Item buttonColor='#9b59b6' title="New Task" onPress={() => console.log("notes tapped!")}>
+          <ActionButtonItem buttonColor='#9b59b6' title="New Task" onPress={() => console.log("notes tapped!")}>
             <Icon name="md-create" style={styles.actionButtonIcon} />
-          </ActionButton.Item>
-          <ActionButton.Item buttonColor='#3498db' title="Notifications" onPress={() => {}}>
+          </ActionButtonItem>
+          <ActionButtonItem buttonColor='#3498db' title="Notifications" onPress={() => {}}>
             <Icon name="md-notifications-off" style={styles.actionButtonIcon} />
-          </ActionButton.Item>
-          <ActionButton.Item buttonColor='#1abc9c' title="All Tasks" onPress={() => {}}>
+          </ActionButtonItem>
+          <ActionButtonItem buttonColor='#1abc9c' title="All Tasks" onPress={() => {}}>
             <Icon name="md-done-all" style={styles.actionButtonIcon} />
-          </ActionButton.Item>
+          </ActionButtonItem>
         </ActionButton>
       </View>
     );
@@ -87,11 +87,11 @@ Take a look at [this gist](https://gist.github.com/mmazzarolo/cfd467436f9d110e94
 | Property      | Type          | Default             | Description |
 | ------------- |:-------------:|:------------:       | ----------- |
 | active        | boolean       | false               | action buttons visible or not
-| autoInactive  | boolean       | true                | Auto hide ActionButtons when ActionButton.Item is pressed.
+| autoInactive  | boolean       | true                | Auto hide ActionButtons when ActionButtonItem is pressed.
 | position      | string        | "right" / "center"  | one of: `left` `center` and `right`
 | bgColor       | string        | "transparent"       | background color when ActionButtons are visible
 | buttonColor   | string        | "rgba(0,0,0,1)"     | background color of the +Button **(must be rgba value!)**
-| spacing       | number        | 20                  | spacing between the `ActionButton.Item`s
+| spacing       | number        | 20                  | spacing between the `ActionButtonItem`s
 | offsetX       | number        | 10 / 30             | offset to the sides of the screen
 | offsetY       | number        | 4 / 30              | offset to the bottom of the screen
 | btnOutRange   | string        | props.buttonColor   | button background color to animate to
@@ -107,7 +107,7 @@ Take a look at [this gist](https://gist.github.com/mmazzarolo/cfd467436f9d110e94
 | verticalOrientation | string  | "up"                | direction action buttons should expand.  One of: `up` or `down`
 | backgroundTappable | boolean  | false               | make background tappable in active state of ActionButton
 
-##### ActionButton.Item:
+##### ActionButtonItem:
 | Property      | Type          | Default             | Description |
 | ------------- |:-------------:|:------------:       | ----------- |
 | title         | string        | undefined           | the title shown next to the button, not shown when empty
