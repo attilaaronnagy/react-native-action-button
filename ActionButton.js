@@ -327,7 +327,7 @@ ActionButton.propTypes = {
   children: PropTypes.oneOfType([
     PropTypes.element,
     PropTypes.array
-  ]),,
+  ]),
 
 
   size: PropTypes.number,
